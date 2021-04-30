@@ -4,7 +4,7 @@
 
 - **웹페이지 홈 화면**
 
-  ![홈 화면](READEME.assets/홈 화면-1619798847977.PNG)
+  ![홈 화면](README.assets/홈 화면.PNG)
 
   <br>
 
@@ -14,13 +14,15 @@
 
   <br>
 
-- **게시글 작성 화면**![작성 화면](READEME.assets/작성 화면.PNG)
+- **게시글 작성 화면**
+
+  ![작성 화면](README.assets/작성 화면.PNG)
 
   <br>
 
 - **게시글 수정 화면**
 
-  ![수정 화면](READEME.assets/수정 화면.PNG)
+  ![수정 화면](README.assets/수정 화면.PNG)
 
 <br>
 
