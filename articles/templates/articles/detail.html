@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'stylesheets/detail.css' %}">
+  <title>마이펫 다이어리</title>
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <a href="{% url 'articles:home' %}" class="logo">
+        <div>마이펫 다이어리</div>
+      </a>
+      <a href="{% url 'articles:create' %}" class="write-link">
+        <div>일기 쓰기</div>
+      </a>
+    </div>
+  </header>
+  <main>
+    <div class="container">
+      <div class="article">
+        <div class="title-and-date">
+          <h1 class="title">{{ article.title }}</h1>
+          <p class="pub-date">{{ article.pub_date }}</p>
+        </div>
+        <hr>
+        {% if article.image %}
+          <img src="{{ article.image.url }}" alt="{{ article.image }}">
+        {% endif %}
+        <p class="content">{{ article.content }}</p>
+        <div class="edit-and-delete">
+          <a href="{% url 'articles:update' article.pk %}" class="edit">수정</a>
+          <form action="{% url 'articles:delete' article.pk %}" method="POST">
+            {% csrf_token %}
+            <button class="delete">삭제</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="back-button-area">
+      <a href="{% url 'articles:home' %}">
+        <button class="back">← Back</button>
+      </a>
+    </div>
+  </main>
+</body>
+</html>

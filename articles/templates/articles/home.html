@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'stylesheets/home.css' %}">
+  <title>마이펫 다이어리</title>
+</head>
+<body>
+  <header>
+    <div class="nav-bar">
+      <a href="{% url 'articles:home' %}" class="logo">
+        <div>마이펫 다이어리</div>
+      </a>
+      <a href="{% url 'articles:create' %}" class="write-link">
+        <div>일기 쓰기</div>
+      </a>
+    </div>
+  </header>
+  <section>
+    <img src="static/images/babylion.jpg" alt="심바" class="main-img">
+  </section>
+  <p class="introduction">귀염둥이 심바의 성장일지</p>
+  <main>
+    <div class="article-list">
+      {% for article in articles %}
+        <div class="article">
+          <div class="title-and-date">
+            <a href="{% url 'articles:detail' article.pk %}" class="title">{{ article.title }}</a>
+            <p class="pub-date">{{ article.pub_date }}</p>
+          </div>
+          <p class="content">{{ article.content }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </main>
+</body>
+</html>
