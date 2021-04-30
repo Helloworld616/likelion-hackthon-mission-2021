@@ -10,7 +10,7 @@
 
 - **게시글 상세 화면**
 
-  ![디테일](READEME.assets/디테일.PNG)
+  ![디테일](README.assets/디테일.PNG)
 
   <br>
 
